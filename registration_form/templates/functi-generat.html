@@ -1,0 +1,120 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Function Form</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="{% static '/css/bootstrap.css' %}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+    
+    <h2 class="text-primary bg-dark py-3 px-3">Logged User: {{request.user}}</h2>
+    <div class="" >
+        <div class="container mt-5" >
+            <div class="bg-white rounded shadow" style="width: 60rem;">
+
+                <div class="container bg-dark text-white">
+                    <h2>FUNCTION</h2>
+                </div>
+
+                <form method="post" name="student_application" id="student_application">
+                    {% csrf_token %} 
+                  <div class="py-3">
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="px-5">CATEGORY:</label>
+                        </div>
+                        <div class="col col-md-6">
+                            <select name="transportprotocol"  class="form-control" id="category-opt">
+                                <option id="selec-option">Select any option</option>
+                                <option>AR</option>
+                                <option>WLAN</option>
+                                <option>GENERAL</option>
+                                
+                            </select>
+                        </div>    
+                    </div>
+                      
+                    <!-- Second Drop-down -->
+                    <div class="row" id="fun-cat">
+                        <div class="col-md-4 mt-4 px-5">
+                            <label>FUNCTION:</label>
+                        </div>
+                        <div class="col col-md-6">
+                            <select name="transportprotocol"  class="form-control mt-4" id="fun-cat">
+                                <option>GET-ALL</option>
+                                <option >GET-VERSION</option>
+                                <option>GET-NATIVE</option>
+                                
+                            </select>
+                        </div>
+
+                         <div class="row">
+                            <div class="col col-md-4">
+                                <button type="submit"
+                                    class="btn btn-primary mb-3 mt-5" style="margin-left: 22rem; ">
+                                    GENERATE
+                                </button>
+                            </div>
+                        </div>
+                            
+                    </div>
+
+                    <!-- end second Drop-down -->
+                                    
+                        </div>
+                       
+                       
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+           
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            
+          </tr>
+         
+        </tbody>
+      </table>
+      <script src="{% static '/js/function.js' %}"></script>
+      <script>
+        $(document).ready(function(){
+       
+         $("#category-opt").on('change',function(){
+
+        $('#fun-cat').toggle();
+
+        });
+});
+      </script>
+</body>
+
+</html>

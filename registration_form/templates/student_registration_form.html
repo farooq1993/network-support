@@ -1,0 +1,70 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="w-full bg-grey-500">
+        <div class="container mx-auto py-8">
+            <div class="w-96 mx-auto bg-white rounded shadow">
+
+                <div class="mx-16 py-4 px-8 text-black text-xl font-bold border-b border-grey-500">Student Registration Form
+                </div>
+
+                <form method="post" name="student_application" id="student_application" action="{% url 'submit_student_form' %}">
+                  {% csrf_token %}
+                  <div class="py-4 px-8">
+
+                        <div class="mb-4">
+                            <label class="block text-grey-darker text-sm font-bold mb-2">Name:</label>
+                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
+                                name="name" id="name" value="" placeholder="Enter Student Name">
+
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-grey-darker text-sm font-bold mb-2">Course Name:</label>
+                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
+                                name="course_name" id="course_name" value="" placeholder="Enter Your Course Name">
+                        </div>
+
+                      <div class="mb-4">
+                            <label class="block text-grey-darker text-sm font-bold mb-2">Roll Number:</label>
+                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
+                                name="roll_number" id="roll_number" value="" placeholder="Enter Roll Number">
+                        </div>
+
+                      <div class="mb-4">
+                            <label class="block text-grey-darker text-sm font-bold mb-2">Email:</label>
+                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
+                                name="email" id="email" value="" placeholder="Enter Roll Number">
+                        </div>
+
+                      <div class="mb-4">
+                            <label class="block text-grey-darker text-sm font-bold mb-2">Phone Number:</label>
+                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
+                                name="phone_number" id="phone_number" value="" placeholder="Enter Phone Number">
+                        </div>
+
+                        <div class="mb-4">
+                            <button type="submit"
+                                class="mb-2 mx-16 rounded-full py-1 px-16 bg-gradient-to-r from-green-400 to-blue-500 ">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
