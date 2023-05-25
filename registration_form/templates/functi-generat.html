@@ -24,6 +24,21 @@
                 <form method="post" name="student_application" id="student_application">
                     {% csrf_token %} 
                   <div class="py-3">
+                    <div class="row">
+                        <div class="col-md-4 mb-5">
+                            <label class="px-5">PRODUCT:</label>
+                        </div>
+                        <div class="col col-md-6">
+                            <select name="transportprotocol"  class="form-control">
+                                <option id="selec-option">Select any option</option>
+                                <option>9800 WLAN</option>
+                                <option>SWITCH</option>
+                                <option>ROUTER</option>
+                                
+                            </select>
+                        </div>    
+                    </div>
+    
 
                     <div class="row">
                         <div class="col-md-4">
