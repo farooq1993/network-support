@@ -1,6 +1,8 @@
 from django.urls import path
 from .views import submit_student_form,wireless, Login, home, Logout,fungenerate
 
+
+
 urlpatterns = [
     path('', Login, name='login'),
 
@@ -13,4 +15,4 @@ urlpatterns = [
     path('home/', home, name='home'),
 
     path('logout/', Logout, name='logout'),
-]
+ ] 

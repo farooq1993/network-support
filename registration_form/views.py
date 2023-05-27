@@ -82,15 +82,14 @@ def Login(request):
 
 def fungenerate(request):
     if request.method == 'POST':
-        username=request.POST['username']
-        password=request.POST['password']
+        
         ipaddress=request.POST['ipaddress']
         transportprotocol=request.POST['transportprotocol']
         #transport_protocol=transportprotocol.objects.get(id=id)
-        wir=Wireless(username=username, password=password, ipaddress=ipaddress, transportprotocol=transportprotocol)
+        wir=Wireless(ipaddress=ipaddress, transportprotocol=transportprotocol)
         wir.save()
 
-        return redirect("login")
+        return redirect("home")
     # context={
     #     "transport_protocol":transport_protocol
     # }
@@ -98,9 +97,10 @@ def fungenerate(request):
 
 
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'mainpage.html')
 
 
 def Logout(request):
     logout(request)
     return redirect("wireless")
+

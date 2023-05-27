@@ -5,27 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Registration Form</title>
-  <link href="{% static 'css/cui-basic.css' %}" rel="stylesheet">
-  <!-- <link href="{% static 'css/style.css' %}" rel="stylesheet"> -->
+  <link href="{% static '/css/cui-basic.min.css' %}" rel="stylesheet">
+  <link href="{% static '/css/cui-styleguide.min.css' %}" rel="stylesheet">
+  <link href="{% static '/css/featherlight.min.css' %}" rel="stylesheet">
+  <link href="{% static '/css/animate.css' %}" rel="stylesheet">
+
+
+  <link href="{% static '/css/cui-basic.css' %}" rel="stylesheet">
 
     <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
 </head>
 
-<body>
+<body class="cui cui--animated cui--headermargins cui--wide styleguide">
     <div class="container">
         <div class="row">
             <div class="">
 
-                <div class="cui text-primary">Wireless automation suite
-                </div>
+                <div class="display-3">Wireless Automation Suite</div>
 
                 <form method="post" name="student_application" id="student_application" class="cui form-control">
                     {% csrf_token %} 
                   <div class="py-4 px-8">
 
-                    <div class="mb-4">
-                        <label class="block text-grey-darker text-sm font-bold mb-2">IP Address:</label>
-                        <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
+                    <div class="col-lg-5">
+                        <label class="form-group">IP Address:</label>
+                        <input class="form-group__text" type="text"
                             name="ipaddress" id="roll_number" value="" placeholder="Enter Roll Number">
                     </div>
 
@@ -52,7 +56,7 @@
                         </div> -->
 
                       <div class="mb-4">
-                            <label class="block text-grey-darker text-sm font-bold mb-2">transport protocol:</label>
+                            <label class="">transport protocol:</label>
                             <select name="transportprotocol">
                                 <option>Restconf</option>
                                 <option>Netconf</option>
@@ -66,7 +70,7 @@
 
                         <div class="mb-4">
                             <button type="submit"
-                                class="btn btn-primary">
+                                class="cui btn btn--primary">
                                 Login
                             </button>
                         </div>
