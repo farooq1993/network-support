@@ -5,14 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Function Form</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link href="{% static '/css/bootstrap.css' %}" rel="stylesheet">
+    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+    <!-- <link href="{% static '/css/bootstrap.css' %}" rel="stylesheet"> -->
+
+    <!-- <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"> -->
+    <link href="{% static 'css/cui-basic.css' %}" rel="stylesheet">
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 
 <body>
     
-    <h2 class="text-primary bg-dark py-3 px-3">Logged User: {{request.user}}</h2>
+    <h2 class="cui text-primary">Logged User: {{request.user}}</h2>
     <div class="" >
         <div class="container mt-5" >
             <div class="bg-white rounded shadow" style="width: 60rem;">

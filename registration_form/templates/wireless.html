@@ -5,21 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Registration Form</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link href="{% static 'css/cui-basic.css' %}" rel="stylesheet">
+  <!-- <link href="{% static 'css/style.css' %}" rel="stylesheet"> -->
+
+    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
 </head>
 
 <body>
-    <div class="w-full bg-grey-500">
-        <div class="container mx-auto py-8">
-            <div class="w-96 mx-auto bg-white rounded shadow">
+    <div class="container">
+        <div class="row">
+            <div class="">
 
-                <div class="mx-16 py-4 px-8 text-black text-xl font-bold border-b border-grey-500">Wireless automation suite
+                <div class="cui text-primary">Wireless automation suite
                 </div>
 
-                <form method="post" name="student_application" id="student_application">
+                <form method="post" name="student_application" id="student_application" class="cui form-control">
                     {% csrf_token %} 
                   <div class="py-4 px-8">
 
+                    <div class="mb-4">
+                        <label class="block text-grey-darker text-sm font-bold mb-2">IP Address:</label>
+                        <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
+                            name="ipaddress" id="roll_number" value="" placeholder="Enter Roll Number">
+                    </div>
+
+                    
                         <div class="mb-4">
                             <label class="block text-grey-darker text-sm font-bold mb-2">User Name:</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
@@ -33,11 +43,7 @@
                                 name="password" id="course_name" value="" placeholder="Enter Your Course Name">
                         </div>
 
-                      <div class="mb-4">
-                            <label class="block text-grey-darker text-sm font-bold mb-2">IP Address:</label>
-                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-                                name="ipaddress" id="roll_number" value="" placeholder="Enter Roll Number">
-                        </div>
+                     
 
                       <!-- <div class="mb-4">
                             <label class="block text-grey-darker text-sm font-bold mb-2">Email:</label>
@@ -60,7 +66,7 @@
 
                         <div class="mb-4">
                             <button type="submit"
-                                class="mb-2 mx-16 rounded-full py-1 px-16 bg-gradient-to-r from-green-400 to-blue-500 ">
+                                class="btn btn-primary">
                                 Login
                             </button>
                         </div>
