@@ -68,7 +68,7 @@ def Login(request):
         wir=Wireless(username=username, password=password,transportprotocol=transportprotocol)
         wir.save()
         
-        user=authenticate(request,username=username, password=password)
+        user=authenticate(username=username, password=password)
 
         if user is not None:
             login(request, user)
@@ -81,11 +81,9 @@ def Login(request):
     return render(request,"wireless.html")
 
 def fungenerate(request):
-    if request.method == 'POST':
-        
+    if request.method == 'POST':        
         ipaddress=request.POST['ipaddress']
         transportprotocol=request.POST['transportprotocol']
-        #transport_protocol=transportprotocol.objects.get(id=id)
         wir=Wireless(ipaddress=ipaddress, transportprotocol=transportprotocol)
         wir.save()
 
@@ -104,3 +102,10 @@ def Logout(request):
     logout(request)
     return redirect("wireless")
 
+
+
+def get_data(request):
+    if request.method=='POST':
+        search=request.POST['transportprotocol']
+        wire2=Wireless.objects.filter(transportprotocol__icontain=search)
+    return render(request, 'function-generat.html', {"wire2":wire2})

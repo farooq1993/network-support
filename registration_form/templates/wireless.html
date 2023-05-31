@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Registration Form</title>
-  <link href="{% static '/css/cui-basic.min.css' %}" rel="stylesheet">
+  <link href="{% static '/css/cui-standard.min.css' %}" rel="stylesheet">
   <link href="{% static '/css/cui-styleguide.min.css' %}" rel="stylesheet">
   <link href="{% static '/css/featherlight.min.css' %}" rel="stylesheet">
   <link href="{% static '/css/animate.css' %}" rel="stylesheet">
+  <link href="{% static '/css/bootstrap.css' %}" rel="stylesheet">
 
 
   <link href="{% static '/css/cui-basic.css' %}" rel="stylesheet">
@@ -16,48 +17,43 @@
     <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
 </head>
 
-<body class="cui cui--animated cui--headermargins cui--wide styleguide">
+<body class="cui">
     <div class="container">
         <div class="row">
             <div class="">
 
-                <div class="display-3">Wireless Automation Suite</div>
+                <div class="display-3 base-margin">Wireless Automation Suite</div>
 
-                <form method="post" name="student_application" id="student_application" class="cui form-control">
+                <form method="post" name="student_application" id="student_application">
                     {% csrf_token %} 
-                  <div class="py-4 px-8">
+                  <div>
 
-                    <div class="col-lg-5">
-                        <label class="form-group">IP Address:</label>
-                        <input class="form-group__text" type="text"
+                    <div class="form-group">
+                        <label class="base-margin-top label--large">IP Address:</label>
+                        <input type="text" class="form-group__text"
                             name="ipaddress" id="roll_number" value="" placeholder="Enter Roll Number">
                     </div>
 
                     
-                        <div class="mb-4">
-                            <label class="block text-grey-darker text-sm font-bold mb-2">User Name:</label>
-                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
+                        <div class="form-group">
+                            <label class="base-margin-top label--large">User Name:</label>
+                            <input type="text" class="form-group__text" class="form-group__text"
                                 name="username" id="name" value="" placeholder="Enter Student Name">
 
                         </div>
 
-                        <div class="mb-4">
-                            <label class="block text-grey-darker text-sm font-bold mb-2">Password:</label>
-                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="password"
+                        <div class="form-group">
+                            <label class="base-margin-top label--large">Password:</label>
+                            <input class="" type="password" class="form-group__text"
                                 name="password" id="course_name" value="" placeholder="Enter Your Course Name">
                         </div>
 
                      
 
-                      <!-- <div class="mb-4">
-                            <label class="block text-grey-darker text-sm font-bold mb-2">Email:</label>
-                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-                                name="email" id="email" value="" placeholder="Enter Roll Number">
-                        </div> -->
 
-                      <div class="mb-4">
-                            <label class="">transport protocol:</label>
-                            <select name="transportprotocol">
+                      <div class="form-group">
+                            <label class="base-margin-top label--large">transport protocol:</label>
+                            <select name="transportprotocol" class="form-group dropdown">
                                 <option>Restconf</option>
                                 <option>Netconf</option>
                                 <option>Gnmi</option>
@@ -70,7 +66,7 @@
 
                         <div class="mb-4">
                             <button type="submit"
-                                class="cui btn btn--primary">
+                                class="cui btn btn--success base-margin-top">
                                 Login
                             </button>
                         </div>
